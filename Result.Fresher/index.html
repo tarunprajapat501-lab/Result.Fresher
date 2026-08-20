@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Result Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Result Portal</h1>
+        <p>Check Your Semester Result</p>
+    </header>
+
+    <main>
+
+        <!-- Student Result Search -->
+        <section class="search-section">
+
+            <h2>Check Result</h2>
+
+            <input
+                type="text"
+                id="enrollmentInput"
+                placeholder="Enter Enrollment Number"
+            >
+
+            <button onclick="searchResult()">
+                View Result
+            </button>
+
+            <p id="message"></p>
+
+        </section>
+
+
+        <!-- Result -->
+        <section id="resultSection" class="result-section">
+
+            <h2>Student Result</h2>
+
+            <div class="student-info">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="studentName"></span>
+                </p>
+
+                <p>
+                    <strong>Enrollment No:</strong>
+                    <span id="studentEnrollment"></span>
+                </p>
+
+                <p>
+                    <strong>Semester:</strong>
+                    <span id="studentSemester"></span>
+                </p>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+
+                <tbody id="marksTable"></tbody>
+
+            </table>
+
+
+            <div class="result-summary">
+
+                <p>
+                    <strong>Total:</strong>
+                    <span id="totalMarks"></span>
+                </p>
+
+                <p>
+                    <strong>Percentage:</strong>
+                    <span id="percentage"></span>%
+                </p>
+
+                <p>
+                    <strong>Result:</strong>
+                    <span id="resultStatus"></span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Admin -->
+        <section class="admin-section">
+
+            <h2>Admin Panel</h2>
+
+            <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter Admin Password"
+            >
+
+            <button onclick="adminLogin()">
+                Admin Login
+            </button>
+
+
+            <div id="adminPanel">
+
+                <h3>Add / Edit Student</h3>
+
+                <input
+                    type="text"
+                    id="enrollment"
+                    placeholder="Enrollment Number"
+                >
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Student Name"
+                >
+
+                <input
+                    type="text"
+                    id="semester"
+                    placeholder="Semester"
+                >
+
+                <input
+                    type="number"
+                    id="dbms"
+                    placeholder="DBMS Marks"
+                >
+
+                <input
+                    type="number"
+                    id="ds"
+                    placeholder="Data Structures Marks"
+                >
+
+                <input
+                    type="number"
+                    id="df"
+                    placeholder="Digital Fundamentals Marks"
+                >
+
+                <input
+                    type="number"
+                    id="pce"
+                    placeholder="PCE Marks"
+                >
+
+                <button onclick="saveStudent()">
+                    Save Student
+                </button>
+
+                <button onclick="clearForm()" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
